@@ -30,6 +30,9 @@ android {
         }
     }
     namespace 'com.example.cryptoapp'
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -37,11 +40,12 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.core:core-ktx:1.15.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+    implementation 'androidx.work:work-runtime-ktx:2.10.0'
 
     def lifecycle_version = "2.8.7"
 
@@ -50,6 +54,7 @@ dependencies {
     def room_version = "2.6.1"
 
     implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
     ksp("androidx.room:room-compiler:$room_version")
 
     implementation 'com.squareup.picasso:picasso:2.71828'
@@ -59,4 +64,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
     implementation 'androidx.recyclerview:recyclerview:1.4.0'
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.dagger:dagger:2.55'
+    ksp("com.google.dagger:dagger-compiler:2.55")
 }
